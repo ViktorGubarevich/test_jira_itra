@@ -1,14 +1,15 @@
-import Navbar from '../components/Navbar'
-import { AuthContextProvider } from '../stores/authContext'
+import { Provider } from 'next-auth/client'
 import '../styles/globals.css'
 
-function MyApp({ Component, pageProps }) {
+export default function App({ Component, pageProps }) {
   return (
-    <AuthContextProvider>
-      <Navbar />
+    <Provider
+      options={{
+        clientMaxAge: 0,
+        keepAlive: 0
+      }}
+      session={pageProps.session} >
       <Component {...pageProps} />
-    </AuthContextProvider>
+    </Provider>
   )
 }
-
-export default MyApp

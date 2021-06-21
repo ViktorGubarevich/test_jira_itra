@@ -2,16 +2,23 @@
   "name": "test_jira_itra",
   "version": "0.1.0",
   "private": true,
+  "description": "Project for NextAuth.js",
+  "repository": "https://github.com/ViktorGubarevich/test_jira_itra.git",
+  "homepage": "http://localhost:3000",
+  "main": "",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
+  "author": "Viktor Gubarevich <v.gubarevich@itransition.com>",
   "dependencies": {
     "@netlify/plugin-nextjs": "^3.4.2",
     "netlify-identity-widget": "^1.9.1",
     "next": "10.1.2",
+    "next-auth": "^3.27.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "sqlite3": "^5.0.2"
   }
 }
