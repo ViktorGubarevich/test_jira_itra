@@ -2,12 +2,14 @@ import TestJiraItra from "next-auth"
 import Providers from "next-auth/providers"
 import axios from "axios"
 
-export default TestJiraItra({
+const options = {
+
     providers: [
-        Providers.GitHub({
-            clientId: process.env.GITHUB_ID,
-            clientSecret: process.env.GITHUB_SECRET,
-        }),
+        Providers.GitHub(
+            {
+                clientId: process.env.GITHUB_ID,
+                clientSecret: process.env.GITHUB_SECRET,
+            }),
         Providers.Google({
             clientId: process.env.GOOGLE_ID,
             clientSecret: process.env.GOOGLE_SECRET,
@@ -28,15 +30,21 @@ export default TestJiraItra({
             }
         }),
     ],
+
+    pages: {
+        signIn: '/signin',
+    },
+
     database: process.env.DATABASE_URL,
     secret: process.env.SECRET,
     session: {
         jwt: true,
     },
     jwt: {},
-    pages: {},
     callbacks: {},
     events: {},
     theme: 'light',
     debug: false,
-})
+}
+
+export default (req, res) => TestJiraItra(req, res, options)

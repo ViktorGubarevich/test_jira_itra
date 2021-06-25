@@ -1,0 +1,38 @@
+  .nav {
+    display: flex;
+    align-items: center;
+  }
+
+  .containerNav {
+    display: flex;
+    padding: 0;
+    margin: 0;  
+  }
+
+  .nav ul {
+    margin-left: auto;
+    margin-right: 50px;
+    list-style-type: none;
+    padding: 0;
+  }
+  .nav li {
+    display: inline-block;
+    margin-left: 16px;
+  }
+  .nav li.btn {
+    padding: 10px 16px;
+    border: 2px solid var(--primary);
+    border-radius: 30px;
+    font-weight: 600;
+    color: var(--primary);
+    cursor: pointer;
+  }
+  .nav li.btn:hover {
+    color: white;
+    background: var(--primary);
+  }
+
+
+
+ 
+ 
