@@ -6,14 +6,12 @@ export default function Input({ id, className, label, ...attrs }) {
     const classes = classNames(className)
 
     return (
-        <div>
-            <input
-                {...attrs}
-                name={id}
-                id={id}
-                className={classes}>
-            </input>
-        </div>
+        <input
+            {...attrs}
+            name={id}
+            id={id}
+            className={classes}>
+        </input>
     );
 };
 
