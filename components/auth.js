@@ -1,5 +1,5 @@
 import React from 'react'
-import { signIn, signOut, useSession, csrfToken } from 'next-auth/client'
+import { signIn, signOut, useSession } from 'next-auth/client'
 import styles from '../styles/signin.module.css';
 import Button from './button';
 import Input from './input';
@@ -12,7 +12,6 @@ export default function Auth({ providers }) {
 
     return (
         <form method="post" action="/api/auth/signin/costum">
-            <Input name="csrfToken" type="hidden" defaultValue={csrfToken} />
             <label for="username" className={styles.signInInput}>
                 User Name<span>*</span>
                 <Input type="text" id="username" name="username" placeholder="Enter your user name" />

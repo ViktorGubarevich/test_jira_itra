@@ -1,6 +1,5 @@
 import React from 'react'
 import { signIn, signOut, useSession, providers, getSession, csrfToken } from 'next-auth/client'
-// import { Button } from "@chakra-ui/react";
 import Button from '../components/button';
 import Header from '../components/header';
 import styles from '../styles/signin.module.css';
@@ -53,13 +52,13 @@ export default function SignIn({ providers }) {
 }
 
 SignIn.getInitialProps = async (context) => {
+
     const { req, res } = context;
     const session = await getSession({ req });
 
+
     if (session && res && session.accessToken) {
-        res.writeHead(302, {
-            Location: "/",
-        });
+        res.writeHead(302, { Location: 'http://localhost:3000/' });
         res.end();
         return;
     }
@@ -67,6 +66,5 @@ SignIn.getInitialProps = async (context) => {
     return {
         session: undefined,
         providers: await providers(context),
-        csrfToken: await csrfToken(context),
     };
 };
