@@ -11,7 +11,6 @@ export default function LogIn() {
                 {!session && <>
                     <span className={styles.notSignedInText}>You are not signed in</span>
                     <a
-                        href={signIn}
                         className={styles.buttonPrimary}
                         onClick={(e) => {
                             e.preventDefault()
@@ -28,7 +27,6 @@ export default function LogIn() {
                         <strong>{session.user.email || session.user.name}</strong>
                     </span>
                     <a
-                        href={`/api/auth/signout`}
                         className={styles.buttonPrimary}
                         onClick={(e) => {
                             e.preventDefault()

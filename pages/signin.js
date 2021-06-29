@@ -1,5 +1,5 @@
 import React from 'react'
-import { signIn, signOut, useSession, providers, getSession, csrfToken } from 'next-auth/client'
+import { signIn, signOut, useSession, providers, getSession } from 'next-auth/client'
 import Button from '../components/button';
 import Header from '../components/header';
 import styles from '../styles/signin.module.css';
@@ -67,4 +67,6 @@ SignIn.getInitialProps = async (context) => {
         session: undefined,
         providers: await providers(context),
     };
-};
+}
+
+

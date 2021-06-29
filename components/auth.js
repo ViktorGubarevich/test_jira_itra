@@ -12,13 +12,13 @@ export default function Auth({ providers }) {
 
     return (
         <form method="post" action="/api/auth/signin/costum">
-            <label for="username" className={styles.signInInput}>
+            <label htmlFor="username" className={styles.signInInput}>
                 User Name<span>*</span>
                 <Input type="text" id="username" name="username" placeholder="Enter your user name" />
             </label>
-            <label for="pass" className={styles.signInInput}>
+            <label htmlFor="pass" className={styles.signInInput}>
                 Password<span>*</span>
-                <Input type="password" id="pass" name="password" minlength="8" required placeholder="Enter your password" />
+                <Input type="password" id="pass" name="password" minLength="8" required placeholder="Enter your password" />
             </label>
             {Object.values(providers).map(provider => {
                 if (provider.name === "Custom Provider") {
