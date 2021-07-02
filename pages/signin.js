@@ -1,7 +1,8 @@
 import React from 'react'
 import { signIn, signOut, useSession, providers, getSession } from 'next-auth/client'
 import Button from '../components/button';
-import Header from '../components/header';
+import Header from '../layouts/header';
+import Footer from '../layouts/footer';
 import styles from '../styles/signin.module.css';
 import Auth from '../components/auth';
 
@@ -47,6 +48,7 @@ export default function SignIn({ providers }) {
                     </div>
                 </div>
             </div>
+            <Footer />
         </>
     );
 }
